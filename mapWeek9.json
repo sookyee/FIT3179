@@ -13,7 +13,7 @@
     "lookup": "id",
     "from": {
       "data": {
-        "url": "data/unemployment.tsv"
+        "url": "Local_Authority_Districts__December_2016__Boundaries.geojson"
       },
       "key": "id",
       "fields": ["rate"]
