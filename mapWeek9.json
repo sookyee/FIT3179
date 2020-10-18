@@ -34,7 +34,7 @@
       "name": "color",
       "type": "quantize",
       "domain": [0, 0.15],
-      "range": {"scheme": ["blues","greens"], "count": 7}
+      "range": {"scheme": "viridis", "count": 7}
     }
   ],
 
