@@ -3,7 +3,7 @@
   "width": 500,
   "height": 300,
   "data": {
-    "url": "data/us-10m.json",
+    "url": "https://raw.githubusercontent.com/sookyee/FIT3179/main/us-10m.json",
     "format": {
       "type": "topojson",
       "feature": "counties"
