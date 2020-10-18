@@ -1,30 +1,64 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
-  "width": 500,
-  "height": 300,
-  "data": {
-    "url": "https://opendata.arcgis.com/datasets/686603e943f948acaa13fb5d2b0f1275_3.geojson",
-    "format": {"property": "features"}
-  },
-  "transform": [
+  "$schema": "https://vega.github.io/schema/vega/v3.json",
+  "description": "A choropleth map depicting U.S. unemployment rates by county in 2009.",
+  "width": 960,
+  "height": 500,
+  "autosize": "none",
+
+  "data": [
     {
-      "filter": {
-        "field": "properties.lad16nm",
-        "oneOf": [
-          "Bolton",
-          "Bury",
-          "Manchester",
-          "Oldham",
-          "Rochdale",
-          "Salford",
-          "Stockport",
-          "Tameside",
-          "Trafford",
-          "Wigan"
-        ]
-      }
+      "name": "unemp",
+      "url": "data/unemployment.tsv",
+      "format": {"type": "tsv", "parse": "auto"}
+    },
+    {
+      "name": "counties",
+      "url": "data/us-10m.json",
+      "format": {"type": "topojson", "feature": "counties"},
+      "transform": [
+        { "type": "lookup", "from": "unemp", "key": "id", "fields": ["id"], "values": ["rate"] },
+        { "type": "filter", "expr": "datum.rate != null" }
+      ]
     }
   ],
-  "projection": {"type": "mercator"},
-  "mark": "geoshape"
+
+  "projections": [
+    {
+      "name": "projection",
+      "type": "albersUsa"
+    }
+  ],
+
+  "scales": [
+    {
+      "name": "color",
+      "type": "quantize",
+      "domain": [0, 0.15],
+      "range": {"scheme": "blues", "count": 7}
+    }
+  ],
+
+  "legends": [
+    {
+      "fill": "color",
+      "orient": "bottom-right",
+      "title": "Unemployment",
+      "format": "0.1%"
+    }
+  ],
+
+  "marks": [
+    {
+      "type": "shape",
+      "from": {"data": "counties"},
+      "encode": {
+        "enter": { "tooltip": {"signal": "format(datum.rate, '0.1%')"}},
+        "update": { "fill": {"scale": "color", "field": "rate"} },
+        "hover": { "fill": {"value": "red"} }
+      },
+      "transform": [
+        { "type": "geoshape", "projection": "projection" }
+      ]
+    }
+  ]
 }
