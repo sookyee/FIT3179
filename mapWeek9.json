@@ -1,40 +1,33 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "width": 500,
   "height": 300,
   "data": {
-    "values": vanAreas,
+    "url": "data/us-10m.json",
     "format": {
-      "type": "json",
-      "property": "features"
+      "type": "topojson",
+      "feature": "counties"
     }
   },
   "transform": [{
-    "lookup": "properties.NAME",
+    "lookup": "id",
     "from": {
       "data": {
-        "values": populations
+        "url": "data/unemployment.tsv"
       },
-      "key": "Area",
-      "fields": ["Population"]
+      "key": "id",
+      "fields": ["rate"]
     }
   }],
   "projection": {
-    "type": "mercator"
+    "type": "albersUsa"
   },
-  "mark": "geoshape", 
+  "mark": "geoshape",
   "encoding": {
-    "fill": {
-      "field": "Population",
+    "color": {
+      "field": "rate",
       "type": "quantitative"
-    },
-    "stroke": {
-      "value" : "white"
-    },
-    "tooltip": 
-    [
-      {"field": "properties.NAME", "title": "Name","type": "nominal"},
-      {"field": "properties.population", "title": "Population", "type": "quantitative"}
-    ]
+    }
   }
 }
+
