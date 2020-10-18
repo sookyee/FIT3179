@@ -13,7 +13,7 @@
     "lookup": "id",
     "from": {
       "data": {
-        "url": "Local_Authority_Districts__December_2016__Boundaries.geojson"
+        "url": "https://raw.githubusercontent.com/vega/vega/master/docs/data/unemployment.tsv"
       },
       "key": "id",
       "fields": ["rate"]
