@@ -50,14 +50,30 @@
   "marks": [
     {
       "type": "shape",
-      "from": {"data": "counties"},
+      "from": { "data": "counties" },
       "encode": {
-        "enter": { "tooltip": {"signal": "format(datum.rate, '0.1%')"}},
-        "update": { "fill": {"scale": "color", "field": "rate"} },
-        "hover": { "fill": {"value": "red"} }
+        "enter": { "tooltip": { "signal": "format(datum.rate, '0.1%')" } },
+        "update": {
+          "fill": {
+            "scale": "color",
+            "field": "rate"
+          }
+        },
+        "hover": { "fill": { "value": "red" } }
       },
+      "selection": {
+        "continent_highlight": {
+          "type": "multi",
+          "fields": [ "datum.rate" ],
+          "bind": "legend"
+        }
+      },
+
       "transform": [
-        { "type": "geoshape", "projection": "projection" }
+        {
+          "type": "geoshape",
+          "projection": "projection"
+        }
       ]
     }
   ]
