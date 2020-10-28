@@ -14,11 +14,30 @@
     {
       "name": "counties",
       "url": "https://raw.githubusercontent.com/sookyee/FIT3179/main/us-10m.json",
-      "format": {"type": "topojson", "feature": "counties"},
+      "format": {
+        "type": "topojson",
+        "feature": "counties"
+      },
       "transform": [
-        { "type": "lookup", "from": "unemp", "key": "id", "fields": ["id"], "values": ["rate"] },
-        { "type": "filter", "expr": "datum.rate != null" }
-      ]
+        {
+          "type": "lookup",
+          "from": "unemp",
+          "key": "id",
+          "fields": [ "id" ],
+          "values": [ "rate" ]
+        },
+        {
+          "type": "filter",
+          "expr": "datum.rate != null"
+        }
+      ],
+      "selection": {
+        "continent_highlight": {
+          "type": "multi",
+          "fields": [ "rate" ],
+          "bind": "legend"
+        }
+      }
     }
   ],
 
@@ -61,14 +80,7 @@
         },
         "hover": { "fill": { "value": "red" } }
       },
-      "selection": {
-        "continent_highlight": {
-          "type": "multi",
-          "fields": [ "datum.rate" ],
-          "bind": "legend"
-        }
-      },
-
+      
       "transform": [
         {
           "type": "geoshape",
