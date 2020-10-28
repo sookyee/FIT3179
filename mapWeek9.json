@@ -30,14 +30,7 @@
           "type": "filter",
           "expr": "datum.rate != null"
         }
-      ],
-      "selection": {
-        "continent_highlight": {
-          "type": "multi",
-          "fields": [ "rate" ],
-          "bind": "legend"
-        }
-      }
+      ]
     }
   ],
 
@@ -65,8 +58,8 @@
       "format": "0.1%"
     }
   ],
-
-  "marks": [
+  
+  "marks": 
     {
       "type": "shape",
       "from": { "data": "counties" },
@@ -80,7 +73,7 @@
         },
         "hover": { "fill": { "value": "red" } }
       },
-      
+
       "transform": [
         {
           "type": "geoshape",
@@ -88,5 +81,6 @@
         }
       ]
     }
-  ]
+
+  
 }
