@@ -1,0 +1,16 @@
+{
+  "title": "Showing a tooltip on hover",
+  "data": {
+    "url": "https://raw.githubusercontent.com/vega/vega/master/docs/data/cars.json"
+  },
+  "mark": "point",
+  "encoding": {
+    "x": {"field": "Acceleration", "type": "quantitative"},
+    "y": {"field": "Miles_per_Gallon", "type": "quantitative"},
+    "color": {"field": "Origin", "type": "nominal"},
+    "tooltip": [
+      {"field": "Acceleration", "type": "quantitative"},
+      {"field": "Year", "type": "nominal"}
+    ]
+  }
+}
