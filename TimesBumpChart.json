@@ -4,6 +4,7 @@
   "data": {"url": "https://raw.githubusercontent.com/sookyee/FIT3179/main/TheTimesRanking.json"},
   "width": "container",
    "height": 380,
+   "background": "#e6f4fd",
  "transform": [
   {
     
@@ -23,9 +24,10 @@
     "x": { "field": "year", "type": "ordinal", "title": "Year",    "axis": {"labelAngle": -30}
     },
     "y": {"field": "world_rank", "type": "ordinal", "title": " World Ranking" },
-    "color": {"field": "university_name", "type": "nominal" , "title": "University" ,  "scale": {"range": ["purple", "#ff0000", "teal", "#EBADE9", "#fdae6b", "#bdbdbd" ]},
+    "color": {"field": "university_name", "type": "nominal" , "title": "" ,  "scale": {"range": ["purple", "#ff0000", "teal", "#EBADE9", "#fdae6b", "#bdbdbd" ]},
     "legend":{
-        "rowPadding": 60
+        "rowPadding": 60,
+        "labelFontSize":0
       }
  },
  "opacity": {
