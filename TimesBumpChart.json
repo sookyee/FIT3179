@@ -1,0 +1,59 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "Popular University Ranks over Time",
+  "data": {"url": "https://raw.githubusercontent.com/sookyee/FIT3179/main/TheTimesRanking.json"},
+  "width": "container",
+   "height": 380,
+ "transform": [
+  {
+    
+  "filter": "datum.university_name === 'Harvard University' || datum.university_name ==='Massachusetts Institute of Technology' || datum.university_name ==='Stanford University' || datum.university_name ==='California Institute of Technology' || datum.university_name ==='University of Cambridge' || datum.university_name ==='Princeton University'"
+
+  }
+],
+  "mark": {
+    "type": "line",
+    "point": true,
+    "tooltip": true
+  },
+  "selection": {
+    "university": {"type": "multi", "fields": ["university_name"], "bind": "legend"}
+  },
+  "encoding": {
+    "x": { "field": "year", "type": "ordinal", "title": "Year",    "axis": {"labelAngle": -30}
+    },
+    "y": {"field": "world_rank", "type": "ordinal", "title": " World Ranking" },
+    "color": {"field": "university_name", "type": "nominal" , "title": "University" ,  "scale": {"range": ["purple", "#ff0000", "teal", "#EBADE9", "#fdae6b", "#bdbdbd" ]},
+    "legend":{
+        "rowPadding": 60
+      }
+ },
+ "opacity": {
+      "condition": {"selection": "university", "value": 1},
+      "value": 0.2
+    }
+  },
+  
+  "config": {
+    "style": {
+      "guide-title": {
+        "align": "center",
+        "baseline": "middle",
+        "dx": 0,
+        "dy": 1,
+        "fontWeight": 800,
+        "fontSize": 12,
+        "fontStyle": "arial"
+      },
+      "guide-label": {
+        "align": "left",
+        "baseline": "middle",
+        "dx": 3,
+        "fontWeight": "normal",
+        "fontSize": 11,
+        "fontStyle": "arial"
+      }
+      
+    }
+  }
+}
