@@ -1,5 +1,5 @@
 body {
-    background-color: #e6f4fd
+    background-color: #a3d8f4
 }
 .header {
     text-align : center
@@ -7,4 +7,5 @@ body {
 .names {
     font-size: 15px;
     padding-bottom:60px;
+    display: inline-block
 }
