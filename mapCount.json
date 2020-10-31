@@ -120,9 +120,7 @@
   "projections": [
     {
       "name": "projection",
-      "size": {
-        "signal": "[width, height]"
-      },
+      "size": { "signal": "[width, height]" },
       "fit": {
         "signal": "[data('world'), layer_1_layer_0_geojson_0, layer_1_layer_1_geojson_0]"
       },
@@ -134,17 +132,11 @@
       "name": "layer_0_marks",
       "type": "shape",
       "style": [ "geoshape" ],
-      "from": {
-        "data": "world"
-      },
+      "from": { "data": "world" },
       "encode": {
         "update": {
-          "fill": {
-            "value": "#969696"
-          },
-          "stroke": {
-            "value": "white"
-          },
+          "fill": { "value": "#969696" },
+          "stroke": { "value": "white" },
           "tooltip": "false"
         }
       },
@@ -159,27 +151,15 @@
       "name": "layer_1_layer_0_marks",
       "type": "symbol",
       "style": [ "circle" ],
-      "from": {
-        "data": "data_1"
-      },
+      "from": { "data": "data_1" },
       "encode": {
         "update": {
-          "opacity": {
-            "value": 0.7
-          },
-          "fill": {
-            "value": "orange"
-          },
+          "opacity": { "value": 0.7 },
+          "fill": { "value": "orange" },
           "tooltip": false,
-          "x": {
-            "field": "layer_1_layer_0_x"
-          },
-          "y": {
-            "field": "layer_1_layer_0_y"
-          },
-          "shape": {
-            "value": "circle"
-          }
+          "x": { "field": "layer_1_layer_0_x" },
+          "y": { "field": "layer_1_layer_0_y" },
+          "shape": { "value": "circle" }
         }
       }
     },
@@ -187,51 +167,29 @@
       "name": "layer_1_layer_1_marks",
       "type": "text",
       "style": [ "text" ],
-      "from": {
-        "data": "data_2"
-      },
+      "from": { "data": "data_2" },
       "encode": {
         "update": {
-          "dy": {
-            "value": -6
-          },
-          "dx": {
-            "value": 0
-          },
-          "fontStyle": {
-            "value": "arial"
-          },
-          "fontWeight": {
-            "value": 600
-          },
-          "fontSize": {
-            "value": 12
-          },
+          "dy": { "value": -6 },
+          "dx": { "value": 0 },
+          "fontStyle": { "value": "arial" },
+          "fontWeight": { "value": 600 },
+          "fontSize": { "value": 12 },
           "fill": {
             "value": "black",
             "opacity": 1
           },
           "tooltip": "false",
-          "x": {
-            "field": "layer_1_layer_1_x"
-          },
-          "y": {
-            "field": "layer_1_layer_1_y"
-          },
+          "x": { "field": "layer_1_layer_1_x" },
+          "y": { "field": "layer_1_layer_1_y" },
           "text": {
             "signal": "''+datum[\"country\"]",
             "fontWeight": "bold"
           },
-          "align": {
-            "value": "center"
-          }
+          "align": { "value": "center" }
         }
       }
     }
   ],
-  "config": {
-    "axisY": {
-      "minExtent": 30
-    }
-  }
+  "config": { "axisY": { "minExtent": 30 } }
 }
