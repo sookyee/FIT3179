@@ -64,6 +64,27 @@
       },
       "value": 0.2
     }
+  },
+  "config": {
+    "style": {
+      "guide-title": {
+        "align": "center",
+        "baseline": "middle",
+        "dx": 0,
+        "dy": 1,
+        "fontWeight": 800,
+        "fontSize": 12,
+        "fontStyle": "arial"
+      },
+      "guide-label": {
+        "align": "left",
+        "baseline": "middle",
+        "dx": 3,
+        "fontWeight": "normal",
+        "fontSize": 11,
+        "fontStyle": "arial"
+      }
+
+    }
   }
-}
 
