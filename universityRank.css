@@ -1,6 +1,10 @@
 body {
-    background-color: lightskyblue
+    background-color: #e6f4fd
 }
 .header {
     text-align : center
+}
+.names {
+    font-size: 15px;
+    padding-bottom:60px;
 }
