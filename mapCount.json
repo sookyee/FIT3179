@@ -1,0 +1,223 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v4.json",
+  "autosize": "pad",
+  "padding": 5,
+  "width": 800,
+  "height": 500,
+  "background": "#e6f4fd",
+  "style": "cell",
+  "data": [
+    {
+      "name": "world",
+      "url": "https://vega.github.io/editor/data/world-110m.json",
+      "format": {
+        "type": "topojson",
+        "feature": "countries"
+      },
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.id!=10"
+        }
+      ]
+    },
+    {
+      "name": "source_0",
+      "values": [
+        {
+          "lon": -63.616672,
+          "lat": -38.416097,
+          "some_data01": 1000,
+          "some_data02": 200,
+          "code": "AR",
+          "country": "Argentina"
+        },
+        {
+          "lon": 133.775136,
+          "lat": -25.274398,
+          "some_data01": 1000,
+          "some_data02": 200,
+          "code": "AU",
+          "country": "Australia"
+        },
+        {
+          "lon": -95.712891,
+          "lat": 37.09024,
+          "some_data01": 1000,
+          "some_data02": 200,
+          "code": "US",
+          "country": "UnitedStates"
+        },
+        {
+          "lon": 78.96288,
+          "lat": 20.593684,
+          "some_data01": 1000,
+          "some_data02": 200,
+          "code": "IN",
+          "country": "India"
+        },
+        {
+          "lon": -106.346771,
+          "lat": 56.130366,
+          "some_data01": 50000,
+          "some_data02": 2000,
+          "code": "CA",
+          "country": "Canada"
+        },
+        {
+          "lon": 138.252924,
+          "lat": 36.204824,
+          "some_data01": 60000,
+          "some_data02": 1000,
+          "code": "JP",
+          "country": "Japan"
+        },
+        {
+          "lon": -3.435973,
+          "lat": 55.378051,
+          "some_data01": 60000,
+          "some_data02": 1000,
+          "code": "UK",
+          "country": "United Kingdom"
+        }
+      ]
+    },
+    {
+      "name": "data_1",
+      "url": "https://raw.githubusercontent.com/sookyee/FIT3179/main/school_country.json",
+      "transform": [
+        {
+          "type": "geojson",
+          "fields": [ "longitude", "latitude" ],
+          "signal": "layer_1_layer_0_geojson_0"
+        },
+        {
+          "type": "geopoint",
+          "projection": "projection",
+          "fields": [ "longitude", "latitude" ],
+          "as": [ "layer_1_layer_0_x", "layer_1_layer_0_y" ]
+        }
+      ]
+    },
+    {
+      "name": "data_2",
+      "source": "source_0",
+      "transform": [
+        {
+          "type": "geojson",
+          "fields": [ "lon", "lat" ],
+          "signal": "layer_1_layer_1_geojson_0"
+        },
+        {
+          "type": "geopoint",
+          "projection": "projection",
+          "fields": [ "lon", "lat" ],
+          "as": [ "layer_1_layer_1_x", "layer_1_layer_1_y" ]
+        }
+      ]
+    }
+  ],
+  "projections": [
+    {
+      "name": "projection",
+      "size": {
+        "signal": "[width, height]"
+      },
+      "fit": {
+        "signal": "[data('world'), layer_1_layer_0_geojson_0, layer_1_layer_1_geojson_0]"
+      },
+      "type": "mercator"
+    }
+  ],
+  "marks": [
+    {
+      "name": "layer_0_marks",
+      "type": "shape",
+      "style": [ "geoshape" ],
+      "from": {
+        "data": "world"
+      },
+      "encode": {
+        "update": {
+          "fill": {
+            "value": "lightgrey"
+          },
+          "stroke": {
+            "value": "white"
+          },
+          "tooltip": "false"
+        }
+      },
+      "transform": [
+        {
+          "type": "geoshape",
+          "projection": "projection"
+        }
+      ]
+    },
+    {
+      "name": "layer_1_layer_0_marks",
+      "type": "symbol",
+      "style": [ "circle" ],
+      "from": {
+        "data": "data_1"
+      },
+      "encode": {
+        "update": {
+          "opacity": {
+            "value": 0.7
+          },
+          "fill": {
+            "value": "steelblue"
+          },
+          "tooltip": false,
+          "x": {
+            "field": "layer_1_layer_0_x"
+          },
+          "y": {
+            "field": "layer_1_layer_0_y"
+          },
+          "shape": {
+            "value": "circle"
+          }
+        }
+      }
+    },
+    {
+      "name": "layer_1_layer_1_marks",
+      "type": "text",
+      "style": [ "text" ],
+      "from": {
+        "data": "data_2"
+      },
+      "encode": {
+        "update": {
+          "dy": {
+            "value": -6
+          },
+          "fill": {
+            "value": "black"
+          },
+          "tooltip": "false",
+          "x": {
+            "field": "layer_1_layer_1_x"
+          },
+          "y": {
+            "field": "layer_1_layer_1_y"
+          },
+          "text": {
+            "signal": "''+datum[\"country\"]"
+          },
+          "align": {
+            "value": "center"
+          }
+        }
+      }
+    }
+  ],
+  "config": {
+    "axisY": {
+      "minExtent": 30
+    }
+  }
+}
