@@ -73,7 +73,9 @@
                 // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
             }).catch(console.error);
             var specMap = "https://raw.githubusercontent.com/sookyee/FIT3179/main/mapCount.json";
-            vegaEmbed('#visMap', specMap).catch(console.error);
+            vegaEmbed('#visMap', specMap, actions = NULL, renderer = c("svg")).then(function (result) {
+                // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+            }).catch(console.error);
 
         </script>
     </div>
