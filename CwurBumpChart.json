@@ -71,7 +71,7 @@
         "align": "center",
         "baseline": "middle",
         "dx": 0,
-        "dy": 1,
+        "dy": -10,
         "fontWeight": 800,
         "fontSize": 12,
         "fontStyle": "arial"
