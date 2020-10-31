@@ -1,63 +1,68 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "description": "Popular University Ranks over Time",
-  "data": {"url": "https://raw.githubusercontent.com/sookyee/FIT3179/main/cwurRanking.json"},
+  "data": { "url": "https://raw.githubusercontent.com/sookyee/FIT3179/main/cwurRanking.json" },
   "width": "container",
-   "height": 380,
-    "background": "#e6f4fd",
- "transform": [
-  {
-    
-  "filter": "datum.institution === 'Harvard University' || datum.institution ==='Massachusetts Institute of Technology' || datum.institution ==='Stanford University' || datum.institution ==='California Institute of Technology' || datum.institution ==='University of Cambridge' || datum.institution ==='Princeton University'"
+  "height": 200,
+  "background": "#e6f4fd",
+  "transform": [
+    {
 
-  }
-],
+      "filter": "datum.institution === 'Harvard University' || datum.institution ==='Massachusetts Institute of Technology' || datum.institution ==='Stanford University' || datum.institution ==='California Institute of Technology' || datum.institution ==='University of Cambridge' || datum.institution ==='Princeton University'"
+
+    }
+  ],
   "mark": {
     "type": "line",
     "point": true,
     "tooltip": true
   },
   "selection": {
-    "university": {"type": "multi", "fields": ["institution"], "bind": "legend"}
-  },
-  "encoding": {
-    "x": { "field": "year", "type": "ordinal", "title": "Year",    "axis": {"labelAngle": 0}
-    },
-    "y": {"field": "world_rank", "type": "ordinal", "title": " World Ranking" },
-    "color": {"field": "institution", "type": "nominal" , "title": "" ,  "scale": {"range": ["purple", "#ff0000", "teal", "#EBADE9", "#fdae6b", "#bdbdbd" ]},
-    "legend":{
-        "rowPadding": 60,
-         "labelFontSize":0,
-         "orient": "left"
-      }
- },
- 
- "opacity": {
-      "condition": {"selection": "university", "value": 1},
-      "value": 0.2
+    "university": {
+      "type": "multi",
+      "fields": [ "institution" ],
+      "bind": "legend"
     }
   },
-  
-  "config": {
-    "style": {
-      "guide-title": {
-        "align": "center",
-        "baseline": "middle",
-        "dx": 0,
-        "dy": 1,
-        "fontWeight": 800,
-        "fontSize": 16,
-        "fontStyle": "arial"
-      },
-      "guide-label": {
-        "align": "left",
-        "baseline": "middle",
-        "dx": 3,
-        "fontWeight": "normal",
-        "fontSize": 12,
-        "fontStyle": "arial"
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "ordinal",
+      "title": "Year",
+
+      "axis": {
+        "labelAngle": 0,
+        "labelFont": "aria",
+        "labelFontSize": 15
       }
-      
+    },
+    "y": {
+      "field": "world_rank",
+      "type": "ordinal",
+      "title": " World Ranking",
+      "axis": {
+        "labelFont": "aria",
+        "labelFontSize": 15
+      }
+    },
+    "color": {
+      "field": "institution",
+      "type": "nominal",
+      "title": "",
+      "scale": { "range": [ "purple", "#ff0000", "teal", "#1f77b4", "#fdae6b", "#969696" ] },
+      "legend": {
+        "rowPadding": 60,
+        "labelFontSize": 0,
+        "orient": "left"
+      }
+    },
+
+    "opacity": {
+      "condition": {
+        "selection": "university",
+        "value": 1
+      },
+      "value": 0.2
     }
   }
 }
