@@ -15,7 +15,13 @@
 </head>
 <body>
     <div class="container-fluid">
+
         <h1>University Rankings</h1>
+        <div class="row">
+            <h3>Top 200 Universities Around the World</h3>
+            <div id="visMap" class="col-xs-4">
+            </div>
+        </div>
         <div class="row">
             <div class="col-xs-4">
                 <h3>The Times</h3>
@@ -28,10 +34,8 @@
 
             </div>
         </div>
+
         <div class="row row-eq-height">
-            <h3>Top 200 Universities Around the World</h3>
-            <div id="visMap" class="col-xs-4">
-                </div>
 
             <div id="vis" class="col-xs-4">
 
@@ -50,7 +54,7 @@
                 <span class="names"> University of Cambridge</span>
                 <br />
             </div>
-           
+
 
             <div id="visTwo" class="col-xs-4"> </div>
 
@@ -58,22 +62,22 @@
 
         </div>
 
-            <script type="text/javascript">
-                var spec = "https://raw.githubusercontent.com/sookyee/FIT3179/main/TimesBumpChart.json";
-                vegaEmbed('#vis', spec).then(function (result) {
-                    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-                }).catch(console.error);
+        <script type="text/javascript">
+            var spec = "https://raw.githubusercontent.com/sookyee/FIT3179/main/TimesBumpChart.json";
+            vegaEmbed('#vis', spec).then(function (result) {
+                // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+            }).catch(console.error);
 
-                var specTwo = "https://raw.githubusercontent.com/sookyee/FIT3179/main/CwurBumpChart.json";
-                vegaEmbed('#visTwo', specTwo).then(function (result) {
-                    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-                }).catch(console.error);
-                var specMap = "https://raw.githubusercontent.com/sookyee/FIT3179/main/mapCount.json";
-                vegaEmbed('#visMap', specMap).then(function (result) {
-                    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-                }).catch(console.error);
+            var specTwo = "https://raw.githubusercontent.com/sookyee/FIT3179/main/CwurBumpChart.json";
+            vegaEmbed('#visTwo', specTwo).then(function (result) {
+                // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+            }).catch(console.error);
+            var specMap = "https://raw.githubusercontent.com/sookyee/FIT3179/main/mapCount.json";
+            vegaEmbed('#visMap', specMap).then(function (result) {
+                // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+            }).catch(console.error);
 
-            </script>
-        </div>
+        </script>
+    </div>
 </body>
 </html>
