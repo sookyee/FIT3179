@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v4.json",
-  "autosize": "pad",
+  "autosize": "fit",
   "padding": 5,
   "width": 800,
   "height": 500,
@@ -140,7 +140,7 @@
       "encode": {
         "update": {
           "fill": {
-            "value": "lightgrey"
+            "value": "#969696"
           },
           "stroke": {
             "value": "white"
@@ -168,7 +168,7 @@
             "value": 0.7
           },
           "fill": {
-            "value": "steelblue"
+            "value": "orange"
           },
           "tooltip": false,
           "x": {
@@ -195,8 +195,21 @@
           "dy": {
             "value": -6
           },
+          "dx": {
+            "value": 0
+          },
+          "fontStyle": {
+            "value": "arial"
+          },
+          "fontWeight": {
+            "value": 600
+          },
+          "fontSize": {
+            "value": 12
+          },
           "fill": {
-            "value": "black"
+            "value": "black",
+            "opacity": 1
           },
           "tooltip": "false",
           "x": {
@@ -206,7 +219,8 @@
             "field": "layer_1_layer_1_y"
           },
           "text": {
-            "signal": "''+datum[\"country\"]"
+            "signal": "''+datum[\"country\"]",
+            "fontWeight": "bold"
           },
           "align": {
             "value": "center"
