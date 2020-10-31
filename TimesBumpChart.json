@@ -3,7 +3,6 @@
   "description": "Popular University Ranks over Time",
   "data": { "url": "https://raw.githubusercontent.com/sookyee/FIT3179/main/TheTimesRanking.json" },
   "width": "container",
-  "padding": 20,
   "height": 200,
   "background": "#e6f4fd",
   "transform": [
@@ -55,7 +54,7 @@
       "scale": { "range": [ "purple", "#ff0000", "teal", "#1f77b4", "#fdae6b", "#969696" ] },
       "legend": {
         "rowPadding": 60,
-        "labelFontSize": 12
+        "labelFontSize": 0
       }
     },
     "opacity": {
