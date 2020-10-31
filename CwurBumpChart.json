@@ -46,7 +46,7 @@
         "dx": 0,
         "dy": 1,
         "fontWeight": 800,
-        "fontSize": 12,
+        "fontSize": 16,
         "fontStyle": "arial"
       },
       "guide-label": {
@@ -54,7 +54,7 @@
         "baseline": "middle",
         "dx": 3,
         "fontWeight": "normal",
-        "fontSize": 11,
+        "fontSize": 12,
         "fontStyle": "arial"
       }
       
