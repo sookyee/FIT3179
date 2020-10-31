@@ -202,10 +202,10 @@
             "value": "arial"
           },
           "fontWeight": {
-            "value": 900
+            "value": 600
           },
           "fontSize": {
-            "value": 15
+            "value": 12
           },
           "fill": {
             "value": "black",
