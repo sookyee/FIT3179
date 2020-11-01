@@ -3,169 +3,169 @@
     "country": "Brazil",
     "institute_type": "Higher Education Institutions",
     "direct_expenditure_type": "Public",
-    "expenses": "None"
+    "expenses": 0.9
   },
   {
     "country": "Russian Federation",
     "institute_type": "Higher Education Institutions",
     "direct_expenditure_type": "Public",
-    "expenses": 0.7
+    "expenses": 0.9
   },
   {
     "country": "Australia",
     "institute_type": "Higher Education Institutions",
     "direct_expenditure_type": "Public",
-    "expenses": 1.2
+    "expenses": 0.7
   },
   {
     "country": "Austria",
     "institute_type": "Higher Education Institutions",
     "direct_expenditure_type": "Public",
-    "expenses": 0.9
+    "expenses": 1.4
   },
   {
     "country": "Belgium",
     "institute_type": "Higher Education Institutions",
     "direct_expenditure_type": "Public",
-    "expenses": 0.9
+    "expenses": 1.3
   },
   {
     "country": "Canada",
     "institute_type": "Higher Education Institutions",
     "direct_expenditure_type": "Public",
-    "expenses": 1.5
+    "expenses": "None"
   },
   {
     "country": "Chile",
     "institute_type": "Higher Education Institutions",
     "direct_expenditure_type": "Public",
-    "expenses": "None"
+    "expenses": 0.7
   },
   {
     "country": "Czech Republic",
     "institute_type": "Higher Education Institutions",
     "direct_expenditure_type": "Public",
-    "expenses": 0.7
+    "expenses": 1.2
   },
   {
     "country": "Denmark",
     "institute_type": "Higher Education Institutions",
     "direct_expenditure_type": "Public",
-    "expenses": 1.3
+    "expenses": 1.8
   },
   {
     "country": "Estonia",
     "institute_type": "Higher Education Institutions",
     "direct_expenditure_type": "Public",
-    "expenses": "None"
+    "expenses": 1.4
   },
   {
     "country": "Finland",
     "institute_type": "Higher Education Institutions",
     "direct_expenditure_type": "Public",
-    "expenses": 1.7
+    "expenses": 1.9
   },
   {
     "country": "France",
     "institute_type": "Higher Education Institutions",
     "direct_expenditure_type": "Public",
-    "expenses": 1
+    "expenses": 1.3
   },
   {
     "country": "Germany",
     "institute_type": "Higher Education Institutions",
     "direct_expenditure_type": "Public",
-    "expenses": 1
+    "expenses": 1.1
   },
   {
     "country": "Greece",
     "institute_type": "Higher Education Institutions",
     "direct_expenditure_type": "Public",
-    "expenses": 0.8
+    "expenses": "None"
   },
   {
     "country": "Hungary",
     "institute_type": "Higher Education Institutions",
     "direct_expenditure_type": "Public",
-    "expenses": 0.8
+    "expenses": 1
   },
   {
     "country": "Iceland",
     "institute_type": "Higher Education Institutions",
     "direct_expenditure_type": "Public",
-    "expenses": 0.7
+    "expenses": 1.1
   },
   {
     "country": "Ireland",
     "institute_type": "Higher Education Institutions",
     "direct_expenditure_type": "Public",
-    "expenses": 0.9
+    "expenses": 1.2
   },
   {
     "country": "Israel",
     "institute_type": "Higher Education Institutions",
     "direct_expenditure_type": "Public",
-    "expenses": "None"
+    "expenses": 0.9
   },
   {
     "country": "Italy",
     "institute_type": "Higher Education Institutions",
     "direct_expenditure_type": "Public",
-    "expenses": 0.7
+    "expenses": 0.8
   },
   {
     "country": "Japan",
     "institute_type": "Higher Education Institutions",
     "direct_expenditure_type": "Public",
-    "expenses": 0.4
+    "expenses": 0.5
   },
   {
     "country": "Korea, Republic of",
     "institute_type": "Higher Education Institutions",
     "direct_expenditure_type": "Public",
-    "expenses": 0.3
+    "expenses": 0.7
   },
   {
     "country": "Luxembourg",
     "institute_type": "Higher Education Institutions",
     "direct_expenditure_type": "Public",
-    "expenses": 0.1
+    "expenses": "None"
   },
   {
     "country": "Mexico",
     "institute_type": "Higher Education Institutions",
     "direct_expenditure_type": "Public",
-    "expenses": 0.8
+    "expenses": 0.9
   },
   {
     "country": "Netherlands",
     "institute_type": "Higher Education Institutions",
     "direct_expenditure_type": "Public",
-    "expenses": 1.1
+    "expenses": 1.3
   },
   {
     "country": "New Zealand",
     "institute_type": "Higher Education Institutions",
     "direct_expenditure_type": "Public",
-    "expenses": 1.1
+    "expenses": 1
   },
   {
     "country": "Norway",
     "institute_type": "Higher Education Institutions",
     "direct_expenditure_type": "Public",
-    "expenses": 1.5
+    "expenses": 1.6
   },
   {
     "country": "OECD Average",
     "institute_type": "Higher Education Institutions",
     "direct_expenditure_type": "Public",
-    "expenses": 0.9
+    "expenses": 1.1
   },
   {
     "country": "Poland",
     "institute_type": "Higher Education Institutions",
     "direct_expenditure_type": "Public",
-    "expenses": 0.8
+    "expenses": 1
   },
   {
     "country": "Portugal",
@@ -177,19 +177,19 @@
     "country": "Slovak Republic",
     "institute_type": "Higher Education Institutions",
     "direct_expenditure_type": "Public",
-    "expenses": "None"
+    "expenses": 0.8
   },
   {
     "country": "Slovenia",
     "institute_type": "Higher Education Institutions",
     "direct_expenditure_type": "Public",
-    "expenses": "None"
+    "expenses": 1.1
   },
   {
     "country": "Spain",
     "institute_type": "Higher Education Institutions",
     "direct_expenditure_type": "Public",
-    "expenses": 0.8
+    "expenses": 1
   },
   {
     "country": "Sweden",
@@ -201,24 +201,24 @@
     "country": "Switzerland",
     "institute_type": "Higher Education Institutions",
     "direct_expenditure_type": "Public",
-    "expenses": 1.1
+    "expenses": 1.3
   },
   {
     "country": "Turkey",
     "institute_type": "Higher Education Institutions",
     "direct_expenditure_type": "Public",
-    "expenses": 0.8
+    "expenses": "None"
   },
   {
     "country": "United Kingdom",
     "institute_type": "Higher Education Institutions",
     "direct_expenditure_type": "Public",
-    "expenses": 0.7
+    "expenses": 0.9
   },
   {
     "country": "United States",
     "institute_type": "Higher Education Institutions",
     "direct_expenditure_type": "Public",
-    "expenses": 1.1
+    "expenses": 0.9
   }
 ]
