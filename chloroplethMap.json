@@ -3,6 +3,7 @@
 
 	"width": 800,
 	"height": 300,
+	"title": "1995                                                       2000                                                   2011",
 	"background": "#e6f4fd",
 	"projection": { "type": "equalEarth" },
 	"data": {
@@ -19,20 +20,28 @@
 			"lookup": "properties.NAME",
 			"from": {
 				"data": {
-					"url": "https://raw.githubusercontent.com/sookyee/FIT3179/main/educational_expenditure_2011.json"
+					"url": "https://raw.githubusercontent.com/sookyee/FIT3179/main/educational_expenditure_.json"
 				},
 				"key": "country",
-				"fields": [ "expenses", "blah" ]
+				"fields": [ "Year1995", "Year2000", "Year2005", "Year2011" ]
 			}
 
 		},
 		{
-			"calculate": "datum.expenses + 0",
+			"calculate": "datum.Year1995 + 0",
 			"as": "(%) of GDP 1995"
 		},
 		{
-			"calculate": "datum.blah + 0",
+			"calculate": "datum.Year2000 + 0",
 			"as": "2000"
+		},
+		{
+			"calculate": "datum.Year2005 + 0",
+			"as": "2005"
+		},
+		{
+			"calculate": "datum.Year2011 + 0",
+			"as": "2011"
 		}
 	],
 	"hconcat": [
@@ -49,12 +58,6 @@
 					}
 
 				},
-				"legends": {
-					"fill": "color",
-					"orient": "bottom-right",
-					"title": "Unemployment",
-					"format": "0.1%"
-				},
 				"tooltip": [
 					{
 						"field": "properties.NAME",
@@ -69,24 +72,19 @@
 				]
 			}
 		},
+
 		{
 			"mark": { "type": "geoshape" },
 			"encoding": {
 
 				"color": {
-					"field": "2000",
+					"field": "2005",
 					"type": "quantitative",
 					"scale": {
 						"type": "linear",
 						"scheme": "tealblues"
 					}
 
-				},
-				"legends": {
-					"fill": "color",
-					"orient": "bottom-right",
-					"title": "Unemployment",
-					"format": "0.1%"
 				},
 				"tooltip": [
 					{
@@ -95,7 +93,34 @@
 						"title": "Country"
 					},
 					{
-						"field": "2000",
+						"field": "2005",
+						"type": "quantitative",
+						"title": "Expenses(%)"
+					}
+				]
+			}
+		},
+		{
+			"mark": { "type": "geoshape" },
+			"encoding": {
+
+				"color": {
+					"field": "2011",
+					"type": "quantitative",
+					"scale": {
+						"type": "linear",
+						"scheme": "tealblues"
+					}
+
+				},
+				"tooltip": [
+					{
+						"field": "properties.NAME",
+						"type": "nominal",
+						"title": "Country"
+					},
+					{
+						"field": "2011",
 						"type": "quantitative",
 						"title": "Expenses(%)"
 					}
