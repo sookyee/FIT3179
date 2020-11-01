@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+    <!-- Import vega-embed -->
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="universityRank.css" media="screen" />
+</head>
+<body>
+    <div class="container-fluid">
+
+        <h1>University Rankings</h1>
+        <h3>Top 200 Universities Around the World</h3>
+        <div class="row">
+            <div class="col-xs-7">
+                <div id="visMap">
+                </div>
+            </div>
+        </div>
+        <h3>Country Expenditure on Higher Education</h3>
+        <div class="row">
+            <div class="col-xs-12">
+                <div id="visCMap">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4">
+                <h3>The Times</h3>
+            </div>
+            <div class="col-xs-4 header">
+                <h3>University</h3>
+            </div>
+            <div class="col-xs-4 header">
+                <h3>Shanghai Ranking</h3>
+
+            </div>
+        </div>
+
+        <div class="row row-eq-height">
+
+            <div id="vis" class="col-xs-5">
+
+            </div>
+            <div class="col-xs-2" style="height:380px">
+                <span class="names"> California Institute of Technology  </span>
+                <br />
+                <span class="names"> Harvard University <br /> </span>
+                <br />
+                <span class="names"> Massachusettes Institute of Technology  </span>
+                <br />
+                <span class="names"> Princeton University</span>
+                <br />
+                <span class="names"> Stanford University </span>
+                <br />
+                <span class="names"> University of Cambridge</span>
+                <br />
+            </div>
+
+
+            <div id="visTwo" class="col-xs-5"> </div>
+
+
+
+        </div>
+
+        <script type="text/javascript">
+            var spec = "https://raw.githubusercontent.com/sookyee/FIT3179/main/TimesBumpChart.json";
+            vegaEmbed('#vis', spec, { renderer: "svg", actions: false }).then(function (result) {
+                // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+            }).catch(console.error);
+
+            var specTwo = "https://raw.githubusercontent.com/sookyee/FIT3179/main/BumpChart.json";
+            vegaEmbed('#visTwo', specTwo, { renderer: "svg", actions: false }).then(function (result) {
+                // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+            }).catch(console.error);
+            var specMap = "https://raw.githubusercontent.com/sookyee/FIT3179/main/mapCount.json";
+            vegaEmbed('#visMap', specMap, { renderer: "svg", actions: false }).then(function (result) {
+                // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+            }).catch(console.error);
+            var specMapTwo = "https://raw.githubusercontent.com/sookyee/FIT3179/main/chloroplethMap.json";
+            vegaEmbed('#visCMap', specMapTwo, { renderer: "svg", actions: false }).then(function (result) {
+                // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+            }).catch(console.error);
+
+        </script>
+    </div>
+</body>
+</html>
