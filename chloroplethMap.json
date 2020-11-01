@@ -3,7 +3,6 @@
 
 	"width": 800,
 	"height": 300,
-	"title": "1995                                                       2000                                                   2011",
 	"background": "#e6f4fd",
 	"projection": { "type": "equalEarth" },
 	"data": {
