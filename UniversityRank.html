@@ -17,9 +17,18 @@
     <div class="container-fluid">
 
         <h1>University Rankings</h1>
+        <h3>Top 200 Universities Around the World</h3>
         <div class="row">
-            <h3>Top 200 Universities Around the World</h3>
-            <div id="visMap">
+            <div class="col-xs-7">
+                <div id="visMap">
+                </div>
+            </div>
+        </div>
+        <h3>Country Expenditure on Higher Education</h3>
+        <div class="row">
+            <div class="col-xs-12">
+                <div id="visCMap">
+                </div>
             </div>
         </div>
         <div class="row">
@@ -64,7 +73,7 @@
 
         <script type="text/javascript">
             var spec = "https://raw.githubusercontent.com/sookyee/FIT3179/main/TimesBumpChart.json";
-            vegaEmbed('#vis', spec, { renderer: "svg",  actions: false }).then(function (result) {
+            vegaEmbed('#vis', spec, { renderer: "svg", actions: false }).then(function (result) {
                 // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
             }).catch(console.error);
 
@@ -74,6 +83,10 @@
             }).catch(console.error);
             var specMap = "https://raw.githubusercontent.com/sookyee/FIT3179/main/mapCount.json";
             vegaEmbed('#visMap', specMap, { renderer: "svg", actions: false }).then(function (result) {
+                // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+            }).catch(console.error);
+            var specMapTwo = "https://raw.githubusercontent.com/sookyee/FIT3179/main/chloreplethMap.json";
+            vegaEmbed('#visCMap', specMapTwo, { renderer: "svg", actions: false }).then(function (result) {
                 // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
             }).catch(console.error);
 
