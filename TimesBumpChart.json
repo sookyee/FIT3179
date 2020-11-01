@@ -8,7 +8,7 @@
   "transform": [
     {
 
-      "filter": "(datum.university_name === 'Harvard University' || datum.university_name ==='Massachusetts Institute of Technology' || datum.university_name ==='Stanford University' || datum.university_name ==='California Institute of Technology' || datum.university_name ==='University of Cambridge' || datum.university_name ==='Princeton University') && datum.year!=2011 && datum.year!=2016"
+      "filter": "(datum.university_name === 'Harvard University' || datum.university_name ==='Massachusetts Institute of Technology' || datum.university_name ==='Stanford University' || datum.university_name ==='California Institute of Technology' || datum.university_name ==='University of Cambridge' || datum.university_name ==='Princeton University')  && datum.year!=2016"
 
     }
   ],
@@ -71,7 +71,7 @@
         "align": "center",
         "baseline": "middle",
         "dx": 0,
-        "dy": -10,
+        "dy": 0,
         "fontWeight": 800,
         "fontSize": 12,
         "fontStyle": "arial"

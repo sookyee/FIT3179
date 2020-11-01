@@ -1,16 +1,17 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "description": "Popular University Ranks over Time",
-  "data": { "url": "https://raw.githubusercontent.com/sookyee/FIT3179/main/cwurRanking.json" },
+  "data": { "url": "https://raw.githubusercontent.com/sookyee/FIT3179/main/ShanghaiRanking.json" },
   "width": "container",
   "height": 200,
   "background": "#e6f4fd",
   "transform": [
     {
 
-      "filter": "datum.institution === 'Harvard University' || datum.institution ==='Massachusetts Institute of Technology' || datum.institution ==='Stanford University' || datum.institution ==='California Institute of Technology' || datum.institution ==='University of Cambridge' || datum.institution ==='Princeton University'"
-
+      "filter": "(datum.university_name === 'Harvard University' || datum.university_name ==='Massachusetts Institute of Technology (MIT)' || datum.university_name ==='Stanford University' || datum.university_name ==='California Institute of Technology' || datum.university_name ==='University of Cambridge' || datum.university_name ==='Princeton University')  && (datum.year==2011 || datum.year==2012|| datum.year==2013 || datum.year==2014 || datum.year==2015)"
     }
+
+
   ],
   "mark": {
     "type": "line",
@@ -20,7 +21,7 @@
   "selection": {
     "university": {
       "type": "multi",
-      "fields": [ "institution" ],
+      "fields": [ "university_name" ],
       "bind": "legend"
     }
   },
@@ -46,7 +47,7 @@
       }
     },
     "color": {
-      "field": "institution",
+      "field": "university_name",
       "type": "nominal",
       "title": "",
       "scale": { "range": [ "purple", "#ff0000", "teal", "#1f77b4", "#fdae6b", "#969696" ] },
@@ -71,7 +72,7 @@
         "align": "center",
         "baseline": "middle",
         "dx": 0,
-        "dy": -10,
+        "dy": 0,
         "fontWeight": 800,
         "fontSize": 12,
         "fontStyle": "arial"
