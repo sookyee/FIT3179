@@ -3,7 +3,7 @@
   "transform": [ { "filter": "(datum.university_name === 'Harvard University' || datum.university_name ==='Massachusetts Institute of Technology' || datum.university_name ==='Stanford University' || datum.university_name ==='California Institute of Technology' || datum.university_name ==='University of Cambridge' || datum.university_name ==='Princeton University')" } ],
   "width": "container",
   "background": "#e6f4fd",
-  "height": 300,
+  "height": 40,
   "title": "Total students",
   "data": { "url": "https://raw.githubusercontent.com/sookyee/FIT3179/main/TheTimesRankingModified.json" },
   "mark": "area",
