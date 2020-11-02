@@ -15,9 +15,9 @@
 			"type": "multi"
 		}
 	},
-	"width": 80,
+	"width": 100,
 	"height": { "step": 4 },
-	"spacing": 20,
+	"spacing": 25,
 	"mark": "bar",
 	"encoding": {
 		"y": {
