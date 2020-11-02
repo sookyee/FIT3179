@@ -1,5 +1,8 @@
 body {
     background-image: linear-gradient(to right, #9dbcd1, #e6f4fd, transparent, #e6f4fd, #a7c2d4);
+    width: 100vh;
+    max-width: 100vw;
+    min-width: 500px;
 }
 .header {
     text-align : center
@@ -13,4 +16,7 @@ body {
     font-size: 12px;
     font-weight: 600;
     font-family:"aria";
+}
+.row {
+    width: 100%;
 }
