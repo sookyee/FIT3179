@@ -66,6 +66,9 @@
 
 
             <div id="visTwo" class="col-xs-5"> </div>
+            <h3> Student Population</h3>
+            <div id="visThree" class="col-3 col-xs-2">
+            </div>
 
 
 
@@ -87,6 +90,10 @@
             }).catch(console.error);
             var specMapTwo = "https://raw.githubusercontent.com/sookyee/FIT3179/main/chloroplethMap.json";
             vegaEmbed('#visCMap', specMapTwo, { renderer: "svg", actions: false }).then(function (result) {
+                // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+            }).catch(console.error);
+            var specThree = "https://raw.githubusercontent.com/sookyee/FIT3179/main/male_female_chart.json";
+            vegaEmbed('#visThree', specThree, { renderer: "svg", actions: false }).then(function (result) {
                 // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
             }).catch(console.error);
 

@@ -1,0 +1,118 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "Popular University Ranks over Time",
+  "data": { "url": "https://raw.githubusercontent.com/sookyee/FIT3179/main/TheTimesRankingModified.json" },
+  "width": "container",
+  "height": 300,
+  "background": "#e6f4fd",
+  "transform": [
+    {
+
+      "filter": "(datum.university_name === 'Harvard University' || datum.university_name ==='Massachusetts Institute of Technology' || datum.university_name ==='Stanford University' || datum.university_name ==='California Institute of Technology' || datum.university_name ==='University of Cambridge' || datum.university_name ==='Princeton University') && datum.year!=2016"
+
+    },
+    {
+      "calculate": "datum.male_ratio",
+      "as": "Male"
+    },
+    {
+      "calculate": "datum.female_ratio",
+      "as": "Female(%)"
+    }
+  ],
+
+  "layer": [
+
+
+
+    {
+      "mark": { "type": "text" },
+
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "title": "Year"
+        },
+        "y": {
+          "field": "Male",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "university_name",
+          "type": "nominal",
+          "scale": { "range": [ "purple", "teal", "#1f77b4", "#fdae6b", "#969696" ] },
+          "legend": {
+            "symbolOpacity": 0,
+            "title": null,
+            "labelFontSize": 0
+          }
+        },
+
+        "text": {
+          "field": "Male",
+          "type": "nominal",
+          "value": "M"
+        }
+      }
+    },
+
+    {
+      "mark": "text",
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "Female(%)",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "university_name",
+          "type": "nominal"
+        },
+        "text": { "value": "F" }
+      }
+    }
+  ],
+
+  "config": {
+    "style": {
+      "guide-title": {
+        "align": "center",
+        "baseline": "middle",
+        "dx": 0,
+        "dy": 0,
+        "fontWeight": 800,
+        "fontSize": 12,
+        "fontStyle": "arial"
+      },
+      "guide-label": {
+        "align": "left",
+        "baseline": "middle",
+        "dx": 3,
+        "fontWeight": "normal",
+        "fontSize": 11,
+        "fontStyle": "arial"
+      }
+
+    },
+    "text": {
+      "fontSize": 14,
+      "fontWeight": 700,
+      "fontStyle": "aria"
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
