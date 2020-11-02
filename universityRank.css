@@ -19,3 +19,6 @@ body {
 .row {
     width: 100vw;
 }
+.pic {
+    justify-content:center;
+}
