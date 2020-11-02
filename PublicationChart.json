@@ -15,7 +15,7 @@
 			"type": "multi"
 		}
 	},
-	"width": 400,
+	"width": 150,
 	"height": { "step": 4 },
 	"spacing": 60,
 	"mark": "bar",
