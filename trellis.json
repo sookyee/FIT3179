@@ -61,7 +61,7 @@
     }
   ],
   "layout": {
-    "padding": 20,
+    "padding": 15,
     "offset": { "rowTitle": 10 },
     "columns": 1,
     "bounds": "full",
