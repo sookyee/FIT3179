@@ -1,37 +1,242 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "transform": [ { "filter": "(datum.university_name === 'Harvard University' || datum.university_name ==='Massachusetts Institute of Technology' || datum.university_name ==='Stanford University' || datum.university_name ==='California Institute of Technology' || datum.university_name ==='University of Cambridge' || datum.university_name ==='Princeton University')" } ],
-  "width": "container",
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
   "background": "#e6f4fd",
-  "height": 40,
-  "title": "Total students",
-  "data": { "url": "https://raw.githubusercontent.com/sookyee/FIT3179/main/TheTimesRankingModified.json" },
-  "mark": "area",
-  "encoding": {
-    "x": {
-      "field": "year",
-      "type": "ordinal",
-      "title": "Year",
-      "axis": { "grid": false }
+  "padding": 5,
+  "data": [
+    {
+      "name": "source_0",
+      "url": "https://raw.githubusercontent.com/sookyee/FIT3179/main/TheTimesRankingModified.json",
+      "format": { "type": "json" },
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "(datum.university_name === 'Harvard University' || datum.university_name ==='Massachusetts Institute of Technology' || datum.university_name ==='Stanford University' || datum.university_name ==='California Institute of Technology' || datum.university_name ==='University of Cambridge' || datum.university_name ==='Princeton University')"
+        },
+        {
+          "type": "impute",
+          "field": "num_students",
+          "groupby": [ "university_name", "university_name" ],
+          "key": "year",
+          "method": "value",
+          "value": 0
+        },
+        {
+          "type": "stack",
+          "groupby": [ "year", "university_name" ],
+          "field": "num_students",
+          "sort": {
+            "field": [ "university_name" ],
+            "order": [ "descending" ]
+          },
+          "as": [ "num_students_start", "num_students_end" ],
+          "offset": "zero"
+        }
+      ]
     },
-    "y": {
-      "field": "num_students",
-      "type": "quantitative",
-      "title": "",
-      "axis": { "grid": false }
-    },
-    "color": {
-      "field": "university_name",
-      "type": "ordinal",
-      "scale": { "range": [ "purple", "#ff0000", "teal", "#1f77b4", "#fdae6b", "#969696" ] },
-      "legend": null
-    },
-    "row": {
-      "field": "university_name",
-      "type": "nominal",
-      "title": ""
+    {
+      "name": "row_domain",
+      "source": "source_0",
+      "transform": [
+        {
+          "type": "aggregate",
+          "groupby": [ "university_name" ]
+        }
+      ]
     }
+  ],
+  "signals": [
+    {
+      "name": "child_width",
+      "init": "isFinite(containerSize()[0]) ? containerSize()[0] : 200",
+      "on": [
+        {
+          "update": "isFinite(containerSize()[0]) ? containerSize()[0] : 200",
+          "events": "window:resize"
+        }
+      ]
+    },
+    {
+      "name": "child_height",
+      "value": 35
+    }
+  ],
+  "layout": {
+    "padding": 20,
+    "offset": { "rowTitle": 10 },
+    "columns": 1,
+    "bounds": "full",
+    "align": "all"
   },
+  "marks": [
+    {
+      "name": "row-title",
+      "type": "group",
+      "role": "row-title",
+      "title": {
+        "text": "Total students",
+        "orient": "left",
+        "style": "guide-title",
+        "offset": 10
+      }
+    },
+    {
+      "name": "row_header",
+      "type": "group",
+      "role": "row-header",
+      "from": { "data": "row_domain" },
+      "sort": {
+        "field": "datum[\"university_name\"]",
+        "order": "ascending"
+      },
+      "encode": { "update": { "height": { "signal": "child_height" } } },
+      "axes": [
+        {
+          "scale": "y",
+          "orient": "left",
+          "grid": false,
+          "labelOverlap": true,
+          "tickCount": { "signal": "ceil(child_height/40)" },
+          "zindex": 0
+        }
+      ]
+    },
+    {
+      "name": "column_footer",
+      "type": "group",
+      "role": "column-footer",
+      "encode": { "update": { "width": { "signal": "child_width" } } },
+      "axes": [
+        {
+          "scale": "x",
+          "orient": "bottom",
+          "grid": false,
+          "title": "Year",
+          "labelAlign": "right",
+          "labelAngle": 270,
+          "labelBaseline": "middle",
+          "zindex": 0
+        }
+      ]
+    },
+    {
+      "name": "cell",
+      "type": "group",
+      "style": "cell",
+      "from": {
+        "facet": {
+          "name": "facet",
+          "data": "source_0",
+          "groupby": [ "university_name" ]
+        }
+      },
+      "sort": {
+        "field": [ "datum[\"university_name\"]" ],
+        "order": [ "ascending" ]
+      },
+      "encode": {
+        "update": {
+          "width": { "signal": "child_width" },
+          "height": { "signal": "child_height" }
+        }
+      },
+      "marks": [
+        {
+          "name": "child_pathgroup",
+          "type": "group",
+          "from": {
+            "facet": {
+              "name": "faceted_path_child_main",
+              "data": "facet",
+              "groupby": [ "university_name" ]
+            }
+          },
+          "encode": {
+            "update": {
+              "width": { "field": { "group": "width" } },
+              "height": { "field": { "group": "height" } }
+            }
+          },
+          "marks": [
+            {
+              "name": "child_marks",
+              "type": "area",
+              "style": [ "area" ],
+              "sort": { "field": "datum[\"year\"]" },
+              "from": { "data": "faceted_path_child_main" },
+              "encode": {
+                "update": {
+                  "orient": { "value": "vertical" },
+                  "fill": {
+                    "scale": "color",
+                    "field": "university_name"
+                  },
+                  "description": {
+                    "signal": "\"Year: \" + (isValid(datum[\"year\"]) ? datum[\"year\"] : \"\"+datum[\"year\"]) + \"; num_students: \" + (format(datum[\"num_students\"], \"\")) + \"; university_name: \" + (isValid(datum[\"university_name\"]) ? datum[\"university_name\"] : \"\"+datum[\"university_name\"])"
+                  },
+                  "x": {
+                    "scale": "x",
+                    "field": "year"
+                  },
+                  "y": {
+                    "scale": "y",
+                    "field": "num_students_end"
+                  },
+                  "y2": {
+                    "scale": "y",
+                    "field": "num_students_start"
+                  },
+                  "defined": {
+                    "signal": "isValid(datum[\"num_students\"]) && isFinite(+datum[\"num_students\"])"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "x",
+      "type": "point",
+      "domain": {
+        "data": "source_0",
+        "field": "year",
+        "sort": true
+      },
+      "range": [
+        0,
+        { "signal": "child_width" }
+      ],
+      "padding": 0.5
+    },
+    {
+      "name": "y",
+      "type": "linear",
+      "domain": {
+        "data": "source_0",
+        "fields": [ "num_students_start", "num_students_end" ]
+      },
+      "range": [
+        { "signal": "child_height" },
+        0
+      ],
+      "nice": true,
+      "zero": true
+    },
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": {
+        "data": "source_0",
+        "field": "university_name",
+        "sort": true
+      },
+      "range": [ "purple", "#ff0000", "teal", "#1f77b4", "#fdae6b", "#969696" ],
+      "interpolate": "hcl"
+    }
+  ],
   "config": {
     "style": {
       "guide-title": {
@@ -51,7 +256,6 @@
         "fontSize": 11,
         "fontStyle": "arial"
       }
-
     }
   }
 }
