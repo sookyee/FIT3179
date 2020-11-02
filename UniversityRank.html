@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
@@ -66,11 +66,12 @@
 
 
             <div id="visTwo" class="col-xs-5"> </div>
-            <div class="row">
-                <h3> Student Population</h3>
-                <div id="visThree" class="col-5 col-xs-4">
-                </div>
+            <h3> Student Population</h3>
+            <div id="visThree" class="col-xs-5">
             </div>
+            <div id="visFour" class="col-xs-7"></div>
+            <h3> Research vs Teaching Quality</h3>
+            <div id="visFive" class="col-xs-12"></div>
 
 
 
@@ -96,6 +97,14 @@
             }).catch(console.error);
             var specThree = "https://raw.githubusercontent.com/sookyee/FIT3179/main/male_female_chart.json";
             vegaEmbed('#visThree', specThree, { renderer: "svg", actions: false }).then(function (result) {
+                // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+            }).catch(console.error);
+            var specFour = "https://raw.githubusercontent.com/sookyee/FIT3179/main/trellis.json";
+            vegaEmbed('#visFour', specFour, { renderer: "svg", actions: false }).then(function (result) {
+                // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+            }).catch(console.error);
+            var specFive = "https://raw.githubusercontent.com/sookyee/FIT3179/main/PublicationChart.json";
+            vegaEmbed('#visFive', specFive, { renderer: "svg", actions: false }).then(function (result) {
                 // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
             }).catch(console.error);
 
