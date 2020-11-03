@@ -84,9 +84,22 @@
           "field": "university_name",
           "type": "nominal"
         },
-        "text": { "value": "F" }
+        "text": { "value": "F" },
+        "tooltip": [
+          {
+            "field": "university_name",
+            "type": "ordinal",
+            "title": "University name"
+          },
+          {
+            "field": "year",
+            "type": "ordinal",
+            "title": "Year"
+          }
+        ]
       }
     }
+
   ],
 
   "config": {
