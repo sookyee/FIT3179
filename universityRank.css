@@ -13,11 +13,10 @@ body {
     display: inline-block
 }
 .row {
-    width: 100vw;
     margin-left:0px;
     margin-right:0px;
 }
 p {
     font-family:Arial;
-    font-size:12px;
+    font-size:15px;
 }
