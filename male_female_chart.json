@@ -53,7 +53,19 @@
           "field": "Male",
           "type": "nominal",
           "value": "M"
-        }
+        },
+        "tooltip": [
+          {
+            "field": "university_name",
+            "type": "ordinal",
+            "title": "University name"
+          },
+          {
+            "field": "year",
+            "type": "ordinal",
+            "title": "Year"
+          }
+        ]
       }
     },
 
