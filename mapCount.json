@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega/v4.json",
   "autosize": "fit",
   "padding": 5,
-  "width": 1000,
+  "width": 800,
   "height": 400,
   "background": "#e6f4fd",
   "style": "cell",
