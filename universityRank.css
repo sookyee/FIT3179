@@ -11,15 +11,6 @@ body {
     padding-bottom:50px;
     display: inline-block
 }
-#visMap {
-    font-size: 12px;
-    font-weight: 600;
-    font-family:"aria";
-}
 .row {
     width: 100vw;
-}
-.textblock {
-    margin-left: 900px;
-
 }
